@@ -4,4 +4,4 @@ const jsdom = require('jsdom');
 // Accepts a jsdom config object.
 // Config object must be cloned before passing through otherwise jsdom will add
 // lots of properties to the original reference.
-module.exports = window = (jsdomConfig = {}) => jsdom.jsdom('', Object.assign({}, jsdomConfig)).defaultView;
+module.exports = (jsdomConfig = {}) => jsdom.jsdom('', Object.assign({}, jsdomConfig)).defaultView;
