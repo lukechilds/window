@@ -6,3 +6,8 @@ test('Window is a class', t => {
 	t.throws(() => Window());
 	t.notThrows(() => new Window());
 });
+
+test('new Window() returns a new window instance', t => {
+	const window = new Window();
+	t.is(window.constructor.name, 'Window');
+});
