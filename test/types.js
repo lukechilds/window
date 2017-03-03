@@ -1,6 +1,8 @@
+/* eslint new-cap: ["error", { "capIsNew": false }] */
 import test from 'ava';
-import window from '../';
+import Window from '../';
 
-test('mergeImages is a function', t => {
-	t.is(typeof window, 'function');
+test('Window is a class', t => {
+	t.throws(() => Window());
+	t.notThrows(() => new Window());
 });
