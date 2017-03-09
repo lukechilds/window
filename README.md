@@ -21,7 +21,7 @@ npm install --save-dev window
 ## Usage
 
 ```js
-import Window from 'window';
+const Window = require('window');
 
 const window = new Window();
 
