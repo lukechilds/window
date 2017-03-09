@@ -32,6 +32,16 @@ div instanceof window.HTMLElement
 // true
 ```
 
+Because `window` is just a normal JavaScript object it can be used more efficiently with object destructuring.
+
+```js
+const { document } = new Window();
+
+document.body.innerHTML = '<div class="foo">Hi!</div>';
+document.body.querySelector('.foo').textContent;
+// Hi!
+```
+
 ## License
 
 MIT © Luke Childs
