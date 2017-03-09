@@ -16,6 +16,20 @@ Or if you're just using for testing you'll probably want:
 npm install --save-dev window
 ```
 
+## Usage
+
+```js
+import Window from 'window';
+
+const window = new Window();
+
+const div = window.document.createElement('div');
+// HTMLDivElement
+
+div instanceof window.HTMLElement
+// true
+```
+
 ## License
 
 MIT © Luke Childs
