@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.org/lukechilds/window.svg?branch=master)](https://travis-ci.org/lukechilds/window) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/window/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/window?branch=master) [![npm](https://img.shields.io/npm/dm/window.svg)](https://www.npmjs.com/package/window)
 
+Exports a jsdom window object. This is useful for enabling browser modules to run in Node.js or testing browser modules in any Node.js test framework.
+
 ## Install
 
 ```shell
