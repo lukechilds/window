@@ -39,7 +39,7 @@ const { document } = new Window();
 
 document.body.innerHTML = '<div class="foo">Hi!</div>';
 document.body.querySelector('.foo').textContent;
-// Hi!
+// "Hi!"
 ```
 
 ## License
