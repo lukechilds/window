@@ -42,6 +42,18 @@ document.body.querySelector('.foo').textContent;
 // "Hi!"
 ```
 
+### Config
+
+You can also pass a jsdom config object that will be passed along to the underlying jsdom instance.
+
+```js
+const jsdomConfig = { userAgent: 'Custom UA' };
+const window = new Window(jsdomConfig);
+
+window.navigator.userAgent;
+// "Custom UA"
+```
+
 ## Universal Testing Pattern
 
 You can use a really simple pattern to enable your browser modules to run in Node.js with `window`. Just allow a window object to be passed in to your module and prepend any references to browser globals with `win`. Set `win` to the passed in window object if it exists, otherwise fallback to global `window`.
