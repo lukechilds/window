@@ -42,6 +42,35 @@ document.body.querySelector('.foo').textContent;
 // "Hi!"
 ```
 
+## Universal Testing Pattern
+
+You can use a really simple pattern to enable your browser modules to run in Node.js with `window`. Just allow a window object to be passed in to your module and prepend any references to browser globals with `win`. Set `win` to the passed in window object if it exists, otherwise fallback to global `window`.
+
+```js
+module.exports = function(text, win) {
+  win = win || window;
+
+  win.document.body.innerHTML = `<h1>${text}</h1>`;
+  return window.document.querySelector('h1');
+};
+```
+
+Browser usage:
+
+```js
+module('Hi');
+// <h1>Hi</h1>
+```
+
+Node.js usage:
+
+```js
+module('Hi', new Window());
+// <h1>Hi</h1>
+```
+
+
+
 ## License
 
 MIT © Luke Childs
