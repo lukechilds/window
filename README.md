@@ -83,6 +83,13 @@ module('Hi', window);
 // <h1>Hi</h1>
 ```
 
+Obviously you don't need to follow this exact pattern, maybe you already have an options object and you only need `document` not the entire window object:
+
+```js
+module.exports = function(text, opts = {}) {
+  const document = opts.document || window.document;
+  ...
+```
 
 
 ## License
