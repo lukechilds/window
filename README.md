@@ -77,7 +77,9 @@ module('Hi');
 Node.js usage:
 
 ```js
-module('Hi', new Window());
+const window = new Window();
+
+module('Hi', window);
 // <h1>Hi</h1>
 ```
 
