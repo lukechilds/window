@@ -93,6 +93,10 @@ module.exports = function(text, opts = {}) {
 
 You can see an example of this pattern in my `create-node` module. Specifically [src/create-node.js](https://github.com/lukechilds/create-node/blob/master/src/create-node.js) and  [test/unit.js](https://github.com/lukechilds/create-node/blob/master/test/unit.js).
 
+## What about dependencies?
+
+Sometimes you may have dependencies that you can't pass a window object to. In that scenario you can alternatively use [`browser-env`](https://github.com/lukechilds/browser-env) which will simulate a global browser environment.
+
 ## License
 
 MIT © Luke Childs
