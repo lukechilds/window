@@ -59,19 +59,21 @@ window.navigator.userAgent;
 You can use a really simple pattern to enable your browser modules to run in Node.js. Just allow a window object to be passed in to your module and prepend any references to browser globals with `win`. Set `win` to the passed in window object if it exists, otherwise fallback to global `window`.
 
 ```js
-module.exports = function(text, win) {
+function createTitle(text, win) {
   win = win || window;
 
-  const div = win.document.createElement('div');
-  div.innerHTML = `<h1>${text}</h1>`;
-  return div.querySelector('h1');
+  const title = win.document.createElement('h1');
+  title.innerHTML = text;
+  return title;
 };
+
+module.exports = createTitle;
 ```
 
 Browser usage:
 
 ```js
-module('Hi');
+createTitle('Hi');
 // <h1>Hi</h1>
 ```
 
@@ -80,17 +82,17 @@ Node.js usage:
 ```js
 const window = new Window();
 
-module('Hi', window);
+createTitle('Hi', window);
 // <h1>Hi</h1>
 ```
 
 Obviously you don't need to follow this exact pattern, maybe you already have an options object and you only need `document` not the entire window object:
 
 ```js
-module.exports = function(text, opts = {}) {
+function createTitle(text, opts = {}) {
   const doc = opts.document || window.document;
 
-  const div = doc.createElement('div');
+  const title = doc.createElement('h1');
   ...
 ```
 
