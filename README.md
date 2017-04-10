@@ -88,7 +88,9 @@ Obviously you don't need to follow this exact pattern, maybe you already have an
 
 ```js
 module.exports = function(text, opts = {}) {
-  const document = opts.document || window.document;
+  const doc = opts.document || window.document;
+
+  const div = doc.createElement('div');
   ...
 ```
 
