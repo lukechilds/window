@@ -96,7 +96,7 @@ function createTitle(text, opts = {}) {
   ...
 ```
 
-You can see an example of this pattern in my `create-node` module. Specifically [src/create-node.js](https://github.com/lukechilds/create-node/blob/master/src/create-node.js) and  [test/unit.js](https://github.com/lukechilds/create-node/blob/master/test/unit.js).
+You can see an example of this pattern in `lukechilds/create-node`. Specifically [src/create-node.js](https://github.com/lukechilds/create-node/blob/master/src/create-node.js) and  [test/unit.js](https://github.com/lukechilds/create-node/blob/master/test/unit.js).
 
 ## What about dependencies?
 
