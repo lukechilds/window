@@ -62,8 +62,9 @@ You can use a really simple pattern to enable your browser modules to run in Nod
 module.exports = function(text, win) {
   win = win || window;
 
-  win.document.body.innerHTML = `<h1>${text}</h1>`;
-  return window.document.querySelector('h1');
+  const div = win.document.createElement('div');
+  div.innerHTML = `<h1>${text}</h1>`;
+  return div.querySelector('h1');
 };
 ```
 
