@@ -8,6 +8,8 @@
 
 Exports a jsdom window object. This is useful for enabling browser modules to run in Node.js or testing browser modules in any Node.js test framework.
 
+Requires Node.js v6 or newer, use `window@3` to support older Node.js versions.
+
 ## Install
 
 ```shell
