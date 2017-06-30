@@ -35,13 +35,13 @@
   },
   "homepage": "https://github.com/lukechilds/window#readme",
   "dependencies": {
-    "jsdom": "9.11.0"
+    "jsdom": "11.0.0"
   },
   "devDependencies": {
-    "ava": "^0.18.0",
+    "ava": "^0.19.1",
     "coveralls": "^2.11.13",
     "eslint-config-xo-lukechilds": "^1.0.0",
-    "nyc": "^10.0.0",
-    "xo": "^0.17.1"
+    "nyc": "^11.0.2",
+    "xo": "^0.18.2"
   }
 }
