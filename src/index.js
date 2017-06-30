@@ -1,6 +1,6 @@
 'use strict';
 
-const jsdom = require('jsdom');
+const { JSDOM } = require('jsdom');
 
 // Class to return a window instance.
 // Accepts a jsdom config object.
@@ -8,6 +8,6 @@ const jsdom = require('jsdom');
 // lots of properties to the original reference.
 module.exports = class Window {
 	constructor(jsdomConfig) {
-		return jsdom.jsdom('', Object.assign({}, jsdomConfig)).defaultView;
+		return (new JSDOM('', Object.assign({}, jsdomConfig))).window;
 	}
 };
