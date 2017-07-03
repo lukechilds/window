@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/lukechilds/window#readme",
   "dependencies": {
-    "jsdom": "11.0.0"
+    "jsdom": "11.1.0"
   },
   "devDependencies": {
     "ava": "^0.19.1",
