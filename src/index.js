@@ -1,6 +1,6 @@
 'use strict';
 
-const JSDOM = require('jsdom').JSDOM;
+const { JSDOM } = require('jsdom');
 
 // Class to return a window instance.
 // Accepts a jsdom config object.
