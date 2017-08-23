@@ -19,5 +19,17 @@ test('properties haven\'t changed', t => {
 	});
 	const properties = Object.getOwnPropertyNames(window);
 
+	expectedProperties.forEach(expected => {
+		if (properties.indexOf(expected) === -1) {
+			console.log('Removed:', expected);
+		}
+	});
+
+	properties.forEach(prop => {
+		if (expectedProperties.indexOf(prop) === -1) {
+			console.log('Added:', prop);
+		}
+	});
+
 	t.deepEqual(expectedProperties.sort(), properties.sort());
 });
