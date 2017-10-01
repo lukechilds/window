@@ -1,6 +1,6 @@
 {
   "name": "window",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Exports a jsdom window object.",
   "main": "src/index.js",
   "engines": {
