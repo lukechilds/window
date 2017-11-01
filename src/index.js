@@ -1,5 +1,3 @@
-'use strict';
-
 const { JSDOM } = require('jsdom');
 
 // Class to return a window instance.
