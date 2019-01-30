@@ -1,6 +1,6 @@
 /* eslint new-cap: ["error", { "capIsNew": false }] */
 import test from 'ava';
-import Window from '../';
+import Window from '..';
 
 test('Window is a class', t => {
 	t.throws(() => Window());
