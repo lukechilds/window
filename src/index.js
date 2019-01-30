@@ -1,9 +1,18 @@
-const { JSDOM } = require('jsdom');
+const { JSDOM, ResourceLoader } = require('jsdom');
 
 // Class to return a window instance.
 // Accepts a jsdom config object.
 module.exports = class Window {
-	constructor(jsdomConfig) {
-		return (new JSDOM('', jsdomConfig)).window;
+	constructor(jsdomConfig = {}) {
+		const { proxy, strictSSL, userAgent } = jsdomConfig;
+		const resources = new ResourceLoader({
+			proxy,
+			strictSSL,
+			userAgent
+		});
+		return (new JSDOM('', {
+			...jsdomConfig,
+			resources
+		})).window;
 	}
 };
