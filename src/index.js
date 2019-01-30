@@ -10,9 +10,8 @@ module.exports = class Window {
 			strictSSL,
 			userAgent
 		});
-		return (new JSDOM('', {
-			...jsdomConfig,
+		return (new JSDOM('', Object.assign(jsdomConfig, {
 			resources
-		})).window;
+		}))).window;
 	}
 };
