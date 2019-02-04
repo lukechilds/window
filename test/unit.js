@@ -1,6 +1,6 @@
 /* eslint new-cap: ["error", { "capIsNew": false }] */
 import test from 'ava';
-import Window from '../';
+import Window from '..';
 import expectedProperties from './fixtures/expectedProperties';
 
 test('jsdom config is passed through', t => {
@@ -10,7 +10,7 @@ test('jsdom config is passed through', t => {
 });
 
 test('properties haven\'t changed', t => {
-  // These options need to be enabled so we can iterate on all properties
+	// These options need to be enabled so we can iterate on all properties
 	const window = new Window({
 		features: {
 			FetchExternalResources: false,
@@ -18,18 +18,6 @@ test('properties haven\'t changed', t => {
 		}
 	});
 	const properties = Object.getOwnPropertyNames(window);
-
-	expectedProperties.forEach(expected => {
-		if (properties.indexOf(expected) === -1) {
-			console.log('Removed:', expected);
-		}
-	});
-
-	properties.forEach(prop => {
-		if (expectedProperties.indexOf(prop) === -1) {
-			console.log('Added:', prop);
-		}
-	});
 
 	t.deepEqual(expectedProperties.sort(), properties.sort());
 });
