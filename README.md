@@ -65,7 +65,7 @@ You can use a really simple pattern to enable your browser modules to run in Nod
 
 ```js
 function createTitle(text, win) {
-  win = win || window;
+  win = win || (typeof window === 'undefined' ? undefined : window);
 
   const title = win.document.createElement('h1');
   title.innerHTML = text;
