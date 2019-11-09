@@ -4,7 +4,7 @@ const { JSDOM, ResourceLoader } = require('jsdom');
 // Accepts a jsdom config object.
 module.exports = class Window {
 	constructor(jsdomConfig = {}) {
-		let resources = jsdomConfig.resources;
+		let {resources} = jsdomConfig;
 		if (!resources) {
 			const { proxy, strictSSL, userAgent } = jsdomConfig;
 			resources = new ResourceLoader({
