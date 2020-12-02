@@ -21,3 +21,8 @@ test('properties haven\'t changed', t => {
 
 	t.deepEqual(expectedProperties.sort(), properties.sort());
 });
+
+test('if fetch is available', t => {
+	const window = new Window();
+	t.true(typeof window.fetch === 'function');
+});

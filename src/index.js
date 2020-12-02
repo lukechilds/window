@@ -1,4 +1,5 @@
 const { JSDOM, ResourceLoader } = require('jsdom');
+const fetch = require('cross-fetch');
 
 // Class to return a window instance.
 // Accepts a jsdom config object.
@@ -10,8 +11,10 @@ module.exports = class Window {
 			strictSSL,
 			userAgent
 		});
-		return (new JSDOM('', Object.assign(jsdomConfig, {
+		const win = (new JSDOM('', Object.assign(jsdomConfig, {
 			resources
 		}))).window;
+		win.fetch = fetch;
+		return win;
 	}
 };

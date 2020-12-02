@@ -216,6 +216,7 @@
   "document",
   "external",
   "focus",
+  "fetch",
   "frameElement",
   "frames",
   "getComputedStyle",
